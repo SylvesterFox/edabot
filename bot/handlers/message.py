@@ -13,6 +13,10 @@ async def cmd_start(message: Message):
     await message.answer_photo(photo=photo_path)
     await message.answer(message_template.start_message, parse_mode='html', reply_markup=inlinekeyboard.keyboard_start)
 
+@router.message(Command('get_db'))
+async def cmd_get_db(message: Message, Admin_id: int):
+    if message.from_user.id == Admin_id:
+        await message.answer_document(FSInputFile('db.sqlite3'))
 
 def setup(*, dispatcher: Dispatcher):
     dispatcher.include_router(router)
