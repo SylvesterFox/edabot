@@ -4,6 +4,7 @@ import logging
 from aiogram.client.default import DefaultBotProperties
 from aiogram import Bot, Dispatcher
 from bot import handlers
+from bot.database import initDB
 
 from settings import config
 
@@ -11,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 async def Main():
     logger.debug("Building bot!")
-
+    await initDB.on_startup()  # Initialize the database
     # Default bot properties
     default_bot_properties = DefaultBotProperties(
         parse_mode=config.PARSE_MODE,

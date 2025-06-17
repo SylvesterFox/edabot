@@ -2,3 +2,9 @@
 /env
 /logs.log
 /__pycache__
+/db.sqlite3
+/.vscode
+/.idea
+/.DS_Store
+/db.sqlite3-wal
+/db.sqlite3-shm
