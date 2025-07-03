@@ -4,7 +4,7 @@ import loggers
 async def on_startup():
     loggers.bot.debug('Connecting to database...')
     await Tortoise.init(
-        db_url='sqlite://db.sqlite3',
+        db_url='sqlite://data/db.sqlite3',
         modules={'models': ['bot.database.models']}
     )
     loggers.bot.debug('Connected to database!')

@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  edabot:
+    build: .
+    container_name: edabot
+    environment:
+      - TOKEN=7721012862:AAGGEee0OPxBKJ84hvBJEdnzkdZ-ejwruGs       
+      - ADMIN_ID=352251491
+    volumes:
+      - ./data:/app/data
